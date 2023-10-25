@@ -9,13 +9,15 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "flow-state.helloWorld",
-        "title": "Hello World"
+        "command": "flow-state.launch",
+        "title": "Flow State"
       }
     ]
   },
@@ -31,18 +33,23 @@
     "test": "node ./out/test/runTest.js"
   },
   "devDependencies": {
-    "@types/vscode": "^1.82.0",
+    "@types/lodash": "^4.14.199",
     "@types/mocha": "^10.0.1",
     "@types/node": "16.x",
+    "@types/vscode": "^1.82.0",
     "@typescript-eslint/eslint-plugin": "^6.4.1",
     "@typescript-eslint/parser": "^6.4.1",
+    "@vscode/test-electron": "^2.3.4",
     "eslint": "^8.47.0",
     "glob": "^10.3.3",
     "mocha": "^10.2.0",
-    "typescript": "^5.1.6",
     "ts-loader": "^9.4.4",
+    "typescript": "^5.1.6",
     "webpack": "^5.88.2",
-    "webpack-cli": "^5.1.4",
-    "@vscode/test-electron": "^2.3.4"
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "node-fetch": "^3.3.2"
   }
 }
