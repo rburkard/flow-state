@@ -4,6 +4,7 @@ import * as vscode from 'vscode';
 import * as lodash from 'lodash';
 import fetch from 'node-fetch';
 import { randomUUID } from 'crypto';
+import 'dotenv/config';
 
 type Changelog = Record<string, {
 	chars: number,
@@ -37,7 +38,7 @@ const updateChangeLog = (props: {changeLog: Changelog, change: vscode.TextDocume
 };
 
 const headers ={
-	'x-api-key': '4VP2CuScoJGs56cfiQlftyNMASdIB3ZebRWuIjLMK20Ih7Be0vHQFsxyoRiR1gqKk2y9EyAPdH7kuBYtxASp7eUW1mTnP4peCznerkqFX8srZ6fIHHUBLFcOnGzZ6dKj',
+	'x-api-key': process.env.API_KEY || '',
 	'Content-Type': 'application/json'
 };
 

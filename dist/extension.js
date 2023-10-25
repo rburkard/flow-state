@@ -24580,6 +24580,7 @@ const vscode = __webpack_require__(1);
 const lodash = __webpack_require__(2);
 const node_fetch_1 = __webpack_require__(3);
 const crypto_1 = __webpack_require__(37);
+__webpack_require__(Object(function webpackMissingModule() { var e = new Error("Cannot find module 'dotenv/config'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 const changeLog = {};
 const sessionId = (0, crypto_1.randomUUID)();
 let productivity = 0;
@@ -24601,7 +24602,7 @@ const updateChangeLog = (props) => {
     return;
 };
 const headers = {
-    'x-api-key': '4VP2CuScoJGs56cfiQlftyNMASdIB3ZebRWuIjLMK20Ih7Be0vHQFsxyoRiR1gqKk2y9EyAPdH7kuBYtxASp7eUW1mTnP4peCznerkqFX8srZ6fIHHUBLFcOnGzZ6dKj',
+    'x-api-key': process.env.API_KEY || '',
     'Content-Type': 'application/json'
 };
 const sendRequest = async (obj) => {
